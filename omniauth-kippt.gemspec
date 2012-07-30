@@ -2,8 +2,8 @@
 require File.expand_path('../lib/omniauth-kippt/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.add_dependency 'omniauth', '~> 1.0'
-  gem.add_dependency 'omniauth-http-basic', '~> 1.0'
+  gem.add_dependency 'omniauth'
+  gem.add_dependency 'omniauth-http-basic'
   gem.add_dependency 'nokogiri'
 
   gem.add_development_dependency 'rspec', '~> 2.7'
@@ -12,11 +12,11 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'webmock'
   gem.add_development_dependency 'yard'
 
-  gem.authors = ['Jan Xie']
-  gem.email = ['jan.h.xie@gmail.com']
+  gem.authors = ['Greg Leppert']
+  gem.email = ['greg@formasfunction.com']
   gem.description = %q{Kippt strategy for OmniAuth.}
   gem.summary = gem.description
-  gem.homepage = 'http://github.com/janx/omniauth-kippt'
+  gem.homepage = 'http://github.com/leppert/omniauth-kippt'
 
   gem.name = 'omniauth-kippt'
   gem.require_paths = ['lib']
