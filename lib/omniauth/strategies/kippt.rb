@@ -26,7 +26,7 @@ module OmniAuth
       protected
 
         def api_uri
-          "#{options.endpoint}/user/#{username}/profile"
+          "#{options.endpoint}/account"
         end
 
         def username
