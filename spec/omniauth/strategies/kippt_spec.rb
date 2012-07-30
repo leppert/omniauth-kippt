@@ -25,10 +25,10 @@ RESPONSE_XML = <<EOF
 </Profile>
 EOF
 
-describe OmniAuth::Strategies::Broadworks do
+describe OmniAuth::Strategies::Kippt do
   def app; lambda {|env| [200, {}, ["Hello HttpBasic!"]]}; end
 
-  let(:fresh_strategy) { Class.new OmniAuth::Strategies::Broadworks }
+  let(:fresh_strategy) { Class.new OmniAuth::Strategies::Kippt }
   let(:instance) { subject.new(app, "http://www.example.com/xsi", :domain => "xdp.broadsoft.com") }
   subject { fresh_strategy }
 

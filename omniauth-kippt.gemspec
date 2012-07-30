@@ -1,5 +1,5 @@
 # encoding: utf-8
-require File.expand_path('../lib/omniauth-broadworks/version', __FILE__)
+require File.expand_path('../lib/omniauth-kippt/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.add_dependency 'omniauth', '~> 1.0'
@@ -14,13 +14,13 @@ Gem::Specification.new do |gem|
 
   gem.authors = ['Jan Xie']
   gem.email = ['jan.h.xie@gmail.com']
-  gem.description = %q{Broadworks strategy for OmniAuth.}
+  gem.description = %q{Kippt strategy for OmniAuth.}
   gem.summary = gem.description
-  gem.homepage = 'http://github.com/janx/omniauth-broadworks'
+  gem.homepage = 'http://github.com/janx/omniauth-kippt'
 
-  gem.name = 'omniauth-broadworks'
+  gem.name = 'omniauth-kippt'
   gem.require_paths = ['lib']
   gem.files = `git ls-files`.split("\n")
   gem.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
-  gem.version = OmniAuth::Broadworks::VERSION
+  gem.version = OmniAuth::Kippt::VERSION
 end

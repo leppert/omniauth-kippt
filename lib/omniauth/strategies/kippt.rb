@@ -3,9 +3,9 @@ require 'omniauth-http-basic'
 
 module OmniAuth
   module Strategies
-    class Broadworks < OmniAuth::Strategies::HttpBasic
+    class Kippt < OmniAuth::Strategies::HttpBasic
 
-      option :title,    "Broadworks Login"
+      option :title,    "Kippt Login"
 
       uid { content_of('Profile/details/userId') }
 

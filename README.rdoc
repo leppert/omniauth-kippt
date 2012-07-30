@@ -1,17 +1,17 @@
-= OmniAuth::Broadworks
+= OmniAuth::Kippt
 
-OmniAuth stratgies to pull user profile from Broadworks through XSI api.
+OmniAuth stratgies to pull user profile from Kippt through XSI api.
 
 == Usage
 
 Install manually or using Bundler:
 
-    gem 'omniauth-broadworks'
+    gem 'omniauth-kippt'
 
-Add :broadworks provider to omniauth builder:
+Add :kippt provider to omniauth builder:
 
     # configuration for xdp sandbox
     use OmniAuth::Builder do
-      provider :broadworks, "http://xsp1.xdp.broadsoft.com/com.broadsoft.xsi-actions/v2.0", domain: 'xdp.broadsoft.com'
+      provider :kippt, "http://xsp1.xdp.broadsoft.com/com.broadsoft.xsi-actions/v2.0", domain: 'xdp.broadsoft.com'
       # provider ...
     end
