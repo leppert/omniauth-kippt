@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+gem 'omniauth-http-basic', :git => 'git://github.com/leppert/omniauth-http-basic.git'
+
 gemspec
 
 group :development, :test do
