@@ -1,26 +1,28 @@
-require 'nokogiri'
+require 'multi_json'
 require 'omniauth-http-basic'
 
 module OmniAuth
   module Strategies
     class Kippt < OmniAuth::Strategies::HttpBasic
 
-      option :title,    "Kippt Login"
+      option :title,          "Kippt Login"
+      option :username_label, "Email"
 
-      uid { content_of('Profile/details/userId') }
+      uid { raw_info['id'] }
 
-      credentials { {:username => username, :password => password, :expires_days => content_of('Profile/passwordExpiresDays')} }
+      credentials do
+        { :token => raw_info['api_token'] }
+      end
 
       info do
-        { :name => "#{content_of('Profile/details/firstName')} #{content_of('Profile/details/lastName')}",
-          :nickname => request['username'] }
+        {
+          :nickname => raw_info['username'],
+          :urls => { 'Kippt' => "http://kippt.com/#{raw_info['app_url']}" }
+        }
       end
 
       extra do
-        { :number => content_of('Profile/details/number'),
-          :extension => content_of('Profile/details/extension'),
-          :group     => content_of('Profile/details/groupId'),
-          :provider  => content_of('Profile/details/serviceProvider') }
+        { :raw_info => raw_info }
       end
 
       protected
@@ -29,18 +31,10 @@ module OmniAuth
           "#{options.endpoint}/account"
         end
 
-        def username
-          return unless request['username']
-          request['username'].index('@') ? request['username'] : [request['username'], options.domain].join('@')
+        def raw_info
+          @raw_info ||= MultiJson.load(authentication_response.body)
         end
 
-        def xml_response
-          @xml_response ||= Nokogiri.XML(authentication_response.body)
-        end
-
-        def content_of(path)
-          xml_response.search(path).first.content
-        end
     end
   end
 end

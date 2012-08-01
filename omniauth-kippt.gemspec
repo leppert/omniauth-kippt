@@ -4,7 +4,7 @@ require File.expand_path('../lib/omniauth-kippt/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.add_dependency 'omniauth'
   #gem.add_dependency 'omniauth-http-basic'
-  gem.add_dependency 'nokogiri'
+  gem.add_dependency 'multi_json'
 
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'rack-test'
