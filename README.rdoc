@@ -1,6 +1,6 @@
 = OmniAuth::Kippt
 
-OmniAuth stratgies to pull user profile from Kippt through XSI api.
+OmniAuth stratgies to pull user profile from Kippt.
 
 == Usage
 
@@ -10,8 +10,6 @@ Install manually or using Bundler:
 
 Add :kippt provider to omniauth builder:
 
-    # configuration for xdp sandbox
     use OmniAuth::Builder do
-      provider :kippt, "http://xsp1.xdp.broadsoft.com/com.broadsoft.xsi-actions/v2.0", domain: 'xdp.broadsoft.com'
-      # provider ...
+      provider :kippt, 'https://kippt.com/api'
     end
