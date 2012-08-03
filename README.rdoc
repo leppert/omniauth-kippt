@@ -6,6 +6,7 @@ OmniAuth stratgies to pull user profile from Kippt.
 
 Install manually or using Bundler:
 
+    gem 'omniauth-http-basic'
     gem 'omniauth-kippt'
 
 Add :kippt provider to omniauth builder:
